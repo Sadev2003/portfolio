@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO Meta Tags -->
+  <title>Sadev Sabuddhika | Cloud & DevOps Engineer Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Sadev Sabuddhika - Aspiring Cloud Engineer & DevOps Enthusiast. Showcasing skills in cloud infrastructure, automation, CI/CD, Terraform, Kubernetes, and AWS.">
+  <meta name="keywords"
+    content="Sadev Sabuddhika, DevOps, Cloud Engineer, AWS, Terraform, Docker, Kubernetes, CI/CD, University of Kelaniya, Portfolio">
+  <meta name="author" content="Sadev Sabuddhika">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sadev Sabuddhika | DevOps & Cloud Portfolio">
+  <meta property="og:description"
+    content="Explore my projects in cloud automation, infrastructure provisioning, and scalable workflows.">
+
+  <!-- Styling Sheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Canvas Techy Background Animation -->
+  <canvas id="techBackground"></canvas>
+
+  <!-- Sticky Header Navigation -->
+  <header>
+    <div class="nav-container">
+      <div class="visitor-counter">
+        <span class="visitor-dot"></span>
+        <span class="visitor-text">VISITORS:</span> <span id="visitorCount">Loading...</span>
+      </div>
+      <a href="#home" class="nav-logo">SADEV<span>.io</span></a>
+
+      <!-- Desktop Navigation Menu -->
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item active"><a href="#home">Home</a></li>
+        <li class="nav-item"><a href="#about">About</a></li>
+        <li class="nav-item"><a href="#skills">Skills</a></li>
+        <li class="nav-item"><a href="#projects">Projects</a></li>
+        <li class="nav-item"><a href="#resume">Resume</a></li>
+        <li class="nav-item"><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <!-- Dark/Light Theme Switcher -->
+        <label class="theme-switch" for="themeToggleInput">
+          <input type="checkbox" id="themeToggleInput">
+          <span class="slider">
+            <!-- Moon Icon (Dark Mode) -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+              style="width: 11px; height: 11px;">
+              <path fill-rule="evenodd"
+                d="M7.455 2.004a.75.75 0 01.26.77 7 7 0 009.958 7.967.75.75 0 011.067.853A8.5 8.5 0 116.647 1.921a.75.75 0 01.808.083z"
+                clip-rule="evenodd" />
+            </svg>
+            <!-- Sun Icon (Light Mode) -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+              style="width: 11px; height: 11px;">
+              <path
+                d="M10 2a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 2zM10 15a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 15zM6.22 4.22a.75.75 0 011.06 0l1.06 1.06a.75.75 0 11-1.06 1.06L6.22 5.28a.75.75 0 010-1.06zM12.72 12.72a.75.75 0 011.06 0l1.06 1.06a.75.75 0 11-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zM2 10a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5h-1.5A.75.75 0 012 10zM15 10a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5h-1.5A.75.75 0 0115 10zM4.22 13.78a.75.75 0 011.06-1.06l1.06 1.06a.75.75 0 11-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zM13.78 4.22a.75.75 0 010 1.06l-1.06 1.06a.75.75 0 01-1.06-1.06l1.06-1.06a.75.75 0 011.06 0z" />
+            </svg>
+          </span>
+        </label>
+
+        <!-- Mobile Hamburguer menu -->
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle Navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HOME (HERO) SECTION -->
+  <section class="section" id="home">
+    <div class="hero-layout reveal">
+      <div class="hero-content">
+        <span class="hero-subtitle">WELCOME TO MY DIGITAL OPERATIONS CENTER</span>
+        <h1 class="hero-title">Hi, I'm <span>Sadev Sabuddhika</span></h1>
+        <p class="hero-description">
+          An aspiring <strong>Cloud Engineer & DevOps Enthusiast</strong> studying Information and Communication
+          Technology at the University of Kelaniya. I build scalable cloud infrastructures, automate deployment
+          pipelines, and implement self-healing server architectures.
+        </p>
+
+        <!-- Key Skill Badge Indicators -->
+        <div class="hero-tech-badges">
+          <span class="tech-badge-item">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+            </svg>
+            Cloud Platforms
+          </span>
+          <span class="tech-badge-item">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" />
+            </svg>
+            CI/CD Pipelines
+          </span>
+          <span class="tech-badge-item">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z" />
+            </svg>
+            Containerization
+          </span>
+          <span class="tech-badge-item">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z" />
+            </svg>
+            Linux Systems
+          </span>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#about" class="btn-custom btn-custom-primary">About Me</a>
+          <a href="#contact" class="btn-custom btn-custom-secondary">Get In Touch</a>
+        </div>
+      </div>
+
+      <!-- Polaroid profile photo frame -->
+      <div class="polaroid-container">
+        <div class="polaroid-frame">
+          <img src="profile.jpg" alt="Sadev Sabuddhika Profile photo" class="polaroid-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT ME SECTION -->
+  <section class="section" id="about">
+    <h2 class="section-title reveal">About Me</h2>
+
+    <div class="about-card reveal">
+      <p class="about-intro">
+        Hello! I'm Sadev Sabuddhika, a tech-driven undergraduate student who is highly enthusiastic about DevOps
+        operations, cloud infrastructures, and system automation workflows.
+      </p>
+
+      <p class="about-text">
+        My educational journey has guided me to investigate cloud topologies, server containment systems, automated
+        continuous build pipelines, and configuration management scripts. I am focused on merging software development
+        procedures with modern operations methodologies to deploy stable, high-performance, and secure server
+        applications.
+      </p>
+
+      <div class="about-details">
+        <div class="details-group">
+          <h4>Academic Institution</h4>
+          <p>University of Kelaniya, Sri Lanka</p>
+        </div>
+        <div class="details-group">
+          <h4>Degree Programme</h4>
+          <p>Bachelor of Information and Communication Technology (Honours)</p>
+          <p style="font-size: 0.85rem; color: var(--accent-color); font-weight: 600;">Status: Ongoing (Undergraduate)
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <!-- SKILLS SECTION -->
+  <section class="section" id="skills">
+    <h2 class="section-title reveal">Technical Skills</h2>
+
+    <div class="carousel-wrapper reveal">
+      <!-- Left Carousel Arrow -->
+      <button class="carousel-btn prev-btn" aria-label="Previous Slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+
+      <div class="skills-grid">
+        <!-- Skill 1: Cloud Platforms -->
+        <div class="skill-card">
+          <h3 class="skill-card-title">Cloud Platforms</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-icon">
+                <!-- AWS Icon -->
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.19 14.54c-1.57.81-3.23.95-4.46.21-.99-.6-1.24-1.74-.69-2.73.55-.99 1.77-1.44 2.87-1.03.62.23 1.15.69 1.63 1.25.43.51.81.42 1.09-.13.34-.69.57-1.5.69-2.31.06-.39-.14-.62-.48-.62-.83 0-1.89.28-2.79.69-.58.26-1.12.1-1.3-.43-.19-.54-.08-1.04.38-1.3 1.29-.72 2.76-1.01 4.14-.85.95.11 1.54.73 1.54 1.73-.01 1.83-.5 3.79-1.39 5.52-.31.6-.74.69-1.09.11z" />
+                </svg>
+              </div>
+              <span class="skill-name">Amazon Web Services (AWS)</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <!-- Microsoft Azure Icon -->
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L2 22h20L12 2zm-1 9l-4 8h8l-4-8z" />
+                </svg>
+              </div>
+              <span class="skill-name">Microsoft Azure</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 2: CI/CD & Automation -->
+        <div class="skill-card">
+          <h3 class="skill-card-title">CI/CD & Automation</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-icon">
+                <!-- Jenkins Icon -->
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.62 13.1c-.81 1.07-2.12 1.74-3.62 1.74s-2.81-.67-3.62-1.74l1.49-1.49c.47.53 1.2.86 2.13.86.93 0 1.66-.33 2.13-.86l1.49 1.49z" />
+                </svg>
+              </div>
+              <span class="skill-name">Jenkins Automation</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <!-- GitHub Actions Icon -->
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.577.688.479C19.138 20.164 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+                </svg>
+              </div>
+              <span class="skill-name">GitHub Actions CI/CD</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 3: Containerization -->
+        <div class="skill-card">
+          <h3 class="skill-card-title">Containerization</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-icon">
+                <!-- Docker Icon -->
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M13.983 8.187h2.119v-2.03h-2.119zm-2.744 0h2.119v-2.03H11.24zm-2.744 0h2.119v-2.03H8.495zm-2.743 0h2.119v-2.03H5.752zm2.743-2.723h2.119v-2.03H8.495zm2.744 0h2.119v-2.03H11.24zm2.744 0h2.119v-2.03h-2.119zm-5.487-2.724h2.119v-2.03H8.495zm14.39 6.275c-.155-.718-.755-1.282-1.39-1.282H19.78c-.28 0-.54.125-.715.342l-1.077 1.332H3.143c-.41 0-.742.342-.742.766v7.304c0 .425.333.766.742.766h16.278c2.25 0 4.075-1.884 4.075-4.196 0-1.785-1.077-3.324-2.502-3.906z" />
+                </svg>
+              </div>
+              <span class="skill-name">Docker Containers</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <!-- Kubernetes Icon -->
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L2 7.5v9L12 22l10-5.5v-9L12 2zm0 4.25l6 3.3v4.9l-6 3.3-6-3.3v-4.9l6-3.3z" />
+                </svg>
+              </div>
+              <span class="skill-name">Kubernetes (Orchestration)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 4: Infrastructure as Code -->
+        <div class="skill-card">
+          <h3 class="skill-card-title">Infrastructure as Code</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-icon">
+                <!-- Terraform Icon -->
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M4 2v6h6V2H4zm10 0v6h6V2h-6zM4 14v6h6v-6H4zm10 0v6h6v-6h-6z" />
+                </svg>
+              </div>
+              <span class="skill-name">Terraform (IaC)</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <!-- Ansible Icon -->
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z" />
+                </svg>
+              </div>
+              <span class="skill-name">Ansible Configuration</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 5: Systems & Scripting -->
+        <div class="skill-card">
+          <h3 class="skill-card-title">Systems & Scripting</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-icon">
+                <!-- Linux Terminal Icon -->
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM8 10l3 2-3 2v-4zm6 4h4v2h-4v-2z" />
+                </svg>
+              </div>
+              <span class="skill-name">Linux & Bash Scripting</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <!-- Python Icon -->
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5 0 1.5.01V12h3v1.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5v-1.5h-2v5z" />
+                </svg>
+              </div>
+              <span class="skill-name">Python Programming</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Carousel Arrow -->
+      <button class="carousel-btn next-btn" aria-label="Next Slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="section" id="projects">
+    <h2 class="section-title reveal">Featured Projects</h2>
+
+    <div class="carousel-wrapper reveal">
+      <!-- Left Carousel Arrow -->
+      <button class="carousel-btn prev-btn" aria-label="Previous Slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+
+      <div class="projects-grid">
+        <!-- Project 1: Serverless IoT Pipeline -->
+        <div class="project-card">
+          <span class="project-status active">PLANNED / STAGE</span>
+          <h3 class="project-card-title">Serverless IoT Telemetry Ingestion</h3>
+          <p class="project-desc">
+            High-throughput data ingestion pipeline handling raw environmental telemetry messages. Automated triggers
+            ingest MQTT queue records, validate payload structures, and persist structured profiles to high-speed
+            databases.
+          </p>
+          <p class="project-outcome">Outcome: Ensured 99.9% uptime and zero message loss under peak simulated workloads.
+          </p>
+          <div class="project-tech-list">
+            <span class="project-badge">AWS IoT Core</span>
+            <span class="project-badge">Lambda</span>
+            <span class="project-badge">DynamoDB</span>
+            <span class="project-badge">Serverless</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Sadev2003" target="_blank" class="project-link">
+              <svg viewBox="0 0 16 16" fill="currentColor">
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: Kubernetes GitOps Cluster -->
+        <div class="project-card">
+          <span class="project-status building">RESEARCHING</span>
+          <h3 class="project-card-title">Kubernetes GitOps Cluster</h3>
+          <p class="project-desc">
+            Container orchestration model deploying containerized microservices dynamically. Declarative configuration
+            structures maintain synchronized state changes relative to git commits, automating continuous deployments
+            using Helm and GitOps tools.
+          </p>
+          <p class="project-outcome">Outcome: Automated container version promotion triggered directly via Git pushes.</p>
+          <div class="project-tech-list">
+            <span class="project-badge">Kubernetes</span>
+            <span class="project-badge">ArgoCD</span>
+            <span class="project-badge">Docker</span>
+            <span class="project-badge">Helm</span>
+            <span class="project-badge">Grafana</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Sadev2003" target="_blank" class="project-link">
+              <svg viewBox="0 0 16 16" fill="currentColor">
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: Automated VPC Multi-Region Architecture -->
+        <div class="project-card">
+          <span class="project-status active">PLANNED / STAGE</span>
+          <h3 class="project-card-title">Automated Multi-Region VPC</h3>
+          <p class="project-desc">
+            Multi-region VPC setup declared as Infrastructure as Code. Automated scripts provision secure subnets across
+            multi-Availability Zones, govern networking routing tables, and establish load balancers ensuring continuous
+            web tier availability.
+          </p>
+          <p class="project-outcome">Outcome: Successfully provisioned complete environments under 2 minutes using
+            Terraform.</p>
+          <div class="project-tech-list">
+            <span class="project-badge">Terraform</span>
+            <span class="project-badge">AWS VPC</span>
+            <span class="project-badge">Auto Scaling</span>
+            <span class="project-badge">AWS RDS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Sadev2003" target="_blank" class="project-link">
+              <svg viewBox="0 0 16 16" fill="currentColor">
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: Full-Stack Enterprise Monitor -->
+        <div class="project-card">
+          <span class="project-status building">DEVELOPING</span>
+          <h3 class="project-card-title">Full-Stack Enterprise Monitor</h3>
+          <p class="project-desc">
+            Integrated full-stack system dashboard communicating with telemetry hosts. Automated background engines query
+            device endpoints, evaluate thresholds logs, and serve interactive reports detailing infrastructure
+            capabilities.
+          </p>
+          <p class="project-outcome">Outcome: Achieved sub-second data synchronization between API endpoints and database.
+          </p>
+          <div class="project-tech-list">
+            <span class="project-badge">React</span>
+            <span class="project-badge">Node.js</span>
+            <span class="project-badge">Express API</span>
+            <span class="project-badge">MongoDB</span>
+            <span class="project-badge">Chart.js</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Sadev2003" target="_blank" class="project-link">
+              <svg viewBox="0 0 16 16" fill="currentColor">
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Carousel Arrow -->
+      <button class="carousel-btn next-btn" aria-label="Next Slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS SECTION -->
+  <section class="section" id="certifications">
+    <h2 class="section-title reveal">Certifications</h2>
+
+    <div class="carousel-wrapper reveal">
+      <!-- Left Carousel Arrow -->
+      <button class="carousel-btn prev-btn" aria-label="Previous Slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+
+      <div class="certs-grid">
+        <!-- Card 1: Cisco Linux Essentials -->
+        <a href="https://www.credly.com/users/sadev-bandara" target="_blank" class="cert-card cisco-cert">
+          <div class="cert-badge-wrapper">
+            <img src="assets/cisco_linux_essentials.png" alt="Cisco Linux Essentials Badge" class="cert-badge-img">
+          </div>
+          <span class="cert-status-badge verified">VERIFIED</span>
+          <h3 class="cert-title">Networking Academy: Linux Essentials</h3>
+          <p class="cert-issuer">Cisco</p>
+        </a>
+
+        <!-- Card 2: Cisco IT Essentials -->
+        <a href="https://www.credly.com/users/sadev-bandara" target="_blank" class="cert-card cisco-cert">
+          <div class="cert-badge-wrapper">
+            <img src="assets/cisco_it_essentials.png" alt="Cisco IT Essentials Badge" class="cert-badge-img">
+          </div>
+          <span class="cert-status-badge verified">VERIFIED</span>
+          <h3 class="cert-title">Networking Academy: IT Essentials</h3>
+          <p class="cert-issuer">Cisco</p>
+        </a>
+
+        <!-- Card 3: Azure Fundamentals (In Progress) -->
+        <div class="cert-card azure-cert in-progress-cert">
+          <div class="cert-badge-wrapper">
+            <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg" alt="Azure Fundamentals Badge" class="cert-badge-img">
+          </div>
+          <span class="cert-status-badge in-progress">IN PROGRESS</span>
+          <h3 class="cert-title">Azure Fundamentals (AZ-900)</h3>
+          <p class="cert-issuer">Microsoft</p>
+        </div>
+      </div>
+
+      <!-- Right Carousel Arrow -->
+      <button class="carousel-btn next-btn" aria-label="Next Slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- MICRO-BADGES SECTION -->
+  <section class="section" id="badges">
+    <h2 class="section-title reveal">Achievements & Badges</h2>
+
+    <div class="badges-grid reveal">
+      <!-- Badge 1 -->
+      <a href="https://learn.microsoft.com/api/achievements/share/en-us/SadevSabuddhika-5314/QS6T95FE?sharingId=C64455B572EEBC60" target="_blank" class="badge-card">
+          <div class="badge-icon-wrapper">
+            <img src="https://learn.microsoft.com/training/achievements/describe-azure-management-governance.svg" alt="Azure management and governance" class="badge-icon-img">
+          </div>
+          <span class="badge-title">Azure Management & Governance</span>
+        </a>
+
+        <!-- Badge 2 -->
+        <a href="https://learn.microsoft.com/api/achievements/share/en-us/SadevSabuddhika-5314/QJCQ6RZE?sharingId=C64455B572EEBC60" target="_blank" class="badge-card">
+          <div class="badge-icon-wrapper">
+            <img src="https://learn.microsoft.com/training/achievements/microsoft-azure-fundamentals-describe-cloud-concepts.svg" alt="Describe cloud concepts" class="badge-icon-img">
+          </div>
+          <span class="badge-title">Azure Cloud Concepts</span>
+        </a>
+
+        <!-- Badge 3 -->
+        <a href="https://learn.microsoft.com/api/achievements/share/en-us/SadevSabuddhika-5314/2TD7WWPV?sharingId=C64455B572EEBC60" target="_blank" class="badge-card">
+          <div class="badge-icon-wrapper">
+            <img src="https://learn.microsoft.com/training/achievements/student-evangelism/introduction-to-iot-hub.svg" alt="Introduction to Azure IoT Hub" class="badge-icon-img">
+          </div>
+          <span class="badge-title">Introduction to Azure IoT Hub</span>
+        </a>
+
+        <!-- Badge 4 -->
+        <a href="https://learn.microsoft.com/api/achievements/share/en-us/SadevSabuddhika-5314/PLQ69HC4?sharingId=C64455B572EEBC60" target="_blank" class="badge-card">
+          <div class="badge-icon-wrapper">
+            <img src="https://learn.microsoft.com/training/achievements/describe-core-architectural-components-of-azure.svg" alt="Describe core architectural components" class="badge-icon-img">
+          </div>
+          <span class="badge-title">Azure Core Architecture</span>
+        </a>
+
+        <!-- Badge 5 -->
+        <a href="https://learn.microsoft.com/api/achievements/share/en-us/SadevSabuddhika-5314/JU45QGHT?sharingId=C64455B572EEBC60" target="_blank" class="badge-card">
+          <div class="badge-icon-wrapper">
+            <img src="https://learn.microsoft.com/training/achievements/github-introduction-products.svg" alt="Introduction to GitHub products" class="badge-icon-img">
+          </div>
+          <span class="badge-title">Intro to GitHub Products</span>
+        </a>
+
+        <!-- Badge 6 -->
+        <a href="https://learn.microsoft.com/api/achievements/share/en-us/SadevSabuddhika-5314/A4UNWMJ7?sharingId=C64455B572EEBC60" target="_blank" class="badge-card">
+          <div class="badge-icon-wrapper">
+            <img src="https://learn.microsoft.com/training/achievements/github/introduction-to-github.svg" alt="Introduction to GitHub" class="badge-icon-img">
+          </div>
+          <span class="badge-title">Introduction to GitHub</span>
+        </a>
+
+        <!-- Badge 7 -->
+        <a href="https://learn.microsoft.com/api/achievements/share/en-us/SadevSabuddhika-5314/9YBPGXAU?sharingId=C64455B572EEBC60" target="_blank" class="badge-card">
+          <div class="badge-icon-wrapper">
+            <img src="https://learn.microsoft.com/training/achievements/student-evangelism/introduction-to-git-badge.svg" alt="Introduction to Git" class="badge-icon-img">
+          </div>
+          <span class="badge-title">Introduction to Git</span>
+        </a>
+
+        <!-- Badge 8 -->
+        <a href="https://learn.microsoft.com/api/achievements/share/en-us/SadevSabuddhika-5314/UR2YMAB3?sharingId=C64455B572EEBC60" target="_blank" class="badge-card">
+          <div class="badge-icon-wrapper">
+            <img src="https://learn.microsoft.com/training/achievements/describe-monitoring-tools-azure.svg" alt="Describe monitoring tools in Azure" class="badge-icon-img">
+          </div>
+          <span class="badge-title">Azure Monitoring Tools</span>
+        </a>
+
+        <!-- Badge 9 -->
+        <a href="https://learn.microsoft.com/api/achievements/share/en-us/SadevSabuddhika-5314/HA254V68?sharingId=C64455B572EEBC60" target="_blank" class="badge-card">
+          <div class="badge-icon-wrapper">
+            <img src="https://learn.microsoft.com/training/achievements/describe-features-tools-manage-deploy-azure-resources.svg" alt="Describe features and tools" class="badge-icon-img">
+          </div>
+          <span class="badge-title">Azure Management & Deployment</span>
+        </a>
+
+        <!-- Badge 10 -->
+        <a href="https://learn.microsoft.com/api/achievements/share/en-us/SadevSabuddhika-5314/W7SYH96N?sharingId=C64455B572EEBC60" target="_blank" class="badge-card">
+          <div class="badge-icon-wrapper">
+            <img src="https://learn.microsoft.com/training/achievements/generic-badge.svg" alt="Intro to Azure Policy" class="badge-icon-img">
+          </div>
+          <span class="badge-title">Intro to Azure Policy</span>
+        </a>
+
+        <!-- Badge 11 -->
+        <a href="https://learn.microsoft.com/api/achievements/share/en-us/SadevSabuddhika-5314/UXBW5NJ3?sharingId=C64455B572EEBC60" target="_blank" class="badge-card">
+          <div class="badge-icon-wrapper">
+            <img src="https://learn.microsoft.com/training/achievements/describe-features-tools-azure-for-governance-compliance.svg" alt="Describe features and tools for governance" class="badge-icon-img">
+          </div>
+          <span class="badge-title">Azure Governance & Compliance</span>
+        </a>
+
+        <!-- Badge 12 -->
+        <a href="https://learn.microsoft.com/api/achievements/share/en-us/SadevSabuddhika-5314/W7T9VZEN?sharingId=C64455B572EEBC60" target="_blank" class="badge-card">
+          <div class="badge-icon-wrapper">
+            <img src="https://learn.microsoft.com/training/achievements/describe-cost-management-azure.svg" alt="Describe cost management" class="badge-icon-img">
+          </div>
+          <span class="badge-title">Azure Cost Management</span>
+        </a>
+
+        <!-- Badge 13 -->
+        <a href="https://learn.microsoft.com/api/achievements/share/en-us/SadevSabuddhika-5314/UXVU2SL3?sharingId=C64455B572EEBC60" target="_blank" class="badge-card">
+          <div class="badge-icon-wrapper">
+            <img src="https://learn.microsoft.com/training/achievements/describe-cloud-service-types.svg" alt="Describe cloud service types" class="badge-icon-img">
+          </div>
+          <span class="badge-title">Azure Cloud Service Types</span>
+        </a>
+
+        <!-- Badge 14 -->
+        <a href="https://learn.microsoft.com/api/achievements/share/en-us/SadevSabuddhika-5314/F2KFPGSX?sharingId=C64455B572EEBC60" target="_blank" class="badge-card">
+          <div class="badge-icon-wrapper">
+            <img src="https://learn.microsoft.com/training/achievements/describe-benefits-use-cloud-services.svg" alt="Describe benefits of cloud services" class="badge-icon-img">
+          </div>
+          <span class="badge-title">Azure Cloud Benefits</span>
+        </a>
+
+        <a href="https://learn.microsoft.com/api/achievements/share/en-us/SadevSabuddhika-5314/UXVUYFR3?sharingId=C64455B572EEBC60" target="_blank" class="badge-card">
+          <div class="badge-icon-wrapper">
+            <img src="https://learn.microsoft.com/training/achievements/describe-cloud-compute.svg" alt="Describe cloud computing" class="badge-icon-img">
+          </div>
+          <span class="badge-title">Describe Cloud Computing</span>
+        </a>
+      </div>
+
+    <!-- Credentials Verification Buttons -->
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 2.5rem;" class="reveal">
+      <a href="https://learn.microsoft.com/en-us/users/sadevsabuddhika-5314/" target="_blank"
+        class="btn-custom btn-custom-secondary">
+        Microsoft Learn Profile
+      </a>
+      <a href="https://www.credly.com/users/sadev-bandara" target="_blank" class="btn-custom btn-custom-primary">
+        Credly Badges Verification
+      </a>
+    </div>
+  </section>
+
+  <!-- RESUME SECTION -->
+  <section class="section" id="resume">
+    <h2 class="section-title reveal">Resume</h2>
+
+    <div class="resume-layout reveal">
+      <!-- Embedded PDF frame (Iframe) mimicking Google Drive / local preview -->
+      <div class="resume-iframe-container">
+        <!-- Generic safe preview representing a resume structure -->
+        <iframe
+          src="https://docs.google.com/viewer?url=https://github.com/Sadev2003/Sadev2003/raw/main/Resume.pdf&embedded=true"
+          class="resume-iframe" title="Sadev Sabuddhika Curriculum Vitae Preview"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section" id="contact">
+    <h2 class="section-title reveal">Contact</h2>
+
+    <div class="contact-layout reveal">
+      <!-- Contact Info Details -->
+      <div class="contact-info-card">
+        <h3>Contact Endpoints</h3>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; margin-top: -1rem;">
+          Establish direct socket communication tunnels or dispatch messages using the channels below:
+        </p>
+
+        <div class="contact-channels">
+          <!-- Email -->
+          <div class="contact-channel-item">
+            <div class="channel-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="channel-details">
+              <span class="channel-label">EMAIL ENDPOINT</span>
+              <a href="mailto:sadevsabuddhika89@gmail.com" class="channel-value">sadevsabuddhika89@gmail.com</a>
+            </div>
+          </div>
+
+          <!-- LinkedIn -->
+          <div class="contact-channel-item">
+            <div class="channel-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+            </div>
+            <div class="channel-details">
+              <span class="channel-label">LINKEDIN PROFILE</span>
+              <a href="https://www.linkedin.com/in/sadevsabuddhika/" target="_blank"
+                class="channel-value">sadevsabuddhika</a>
+            </div>
+          </div>
+
+          <!-- GitHub -->
+          <div class="contact-channel-item">
+            <div class="channel-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <div class="channel-details">
+              <span class="channel-label">GITHUB REPOSITORIES</span>
+              <a href="https://github.com/Sadev2003" target="_blank" class="channel-value">Sadev2003</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Message Form -->
+      <div class="contact-form-card">
+        <div class="form-alert" id="formAlert"></div>
+
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="formName">Full Name</label>
+            <input type="text" id="formName" placeholder="e.g. Hiring Manager" required>
+          </div>
+
+          <div class="form-group">
+            <label for="formEmail">Email Address</label>
+            <input type="email" id="formEmail" placeholder="e.g. recruiter@company.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="formMessage">Message Payload</label>
+            <textarea id="formMessage" placeholder="Outline open role descriptions or collaboration requests..."
+              required></textarea>
+          </div>
+
+          <button type="submit" class="btn-custom btn-custom-primary" style="width: 100%; margin-top: 1rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              style="width: 16px; height: 16px;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+            </svg>
+            Send Message Ticket
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2026 Sadev Sabuddhika. All rights reserved. Deployed with GitHub Pages.</p>
+  </footer>
+
+  <!-- Core Javascript -->
+  <script src="app.js"></script>
+</body>
+
+</html>
