@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const updateVisitorCounter = async () => {
     // Target your newly deployed standalone production Azure Function URL
-    const azureFunctionApiUrl = 'sadev-portfolio-counter-ajc3hrg9d7djexe5.southeastasia-01.azurewebsites.net';
+    const azureFunctionApiUrl = 'https://sadev-portfolio-counter-ajc3hrg9d7djexe5.southeastasia-01.azurewebsites.net/api/visitor_counter';
     
     if (visitorCountEl) {
       try {
