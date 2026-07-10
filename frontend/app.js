@@ -190,11 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
         visitorCountEl.textContent = "---"; // Safe graceful static state fallback 
       }
     }
-  };
-
-  // Dispatch API tunnel transaction on initial lifecycle paint load
-  updateVisitorCounter();
-  };
+   };
 
   // Dispatch API tunnel transaction on initial lifecycle paint load
   updateVisitorCounter();
