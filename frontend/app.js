@@ -128,7 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const formAlert = document.getElementById('formAlert');
   
   if (contactForm && formAlert) {
-    contactForm.addEventListener('submit', (e) => {
+    // Made this callback async to cleanly handle serverless network boundaries
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       
       const name = document.getElementById('formName').value.trim();
@@ -140,9 +141,29 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
       
-      // Simulate form submission success
-      showFeedback('Thank you! Your message has been sent successfully.', 'success');
-      contactForm.reset();
+      // Target your deployed production Azure Function route
+      const functionApiUrl = 'https://sadev-portfolio-counter-ajc3hrg9d7djexe5.southeastasia-01.azurewebsites.net/api/send_message';
+      
+      try {
+        // Dispatch the form payload across the network border
+        const response = await fetch(functionApiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ name, email, message })
+        });
+
+        if (response.ok) {
+          showFeedback('Thank you! Your message has been sent successfully.', 'success');
+          contactForm.reset();
+        } else {
+          showFeedback('Server rejected message. Please verify your data fields.', 'error');
+        }
+      } catch (error) {
+        console.error('Error submitting form ticket telemetry:', error);
+        showFeedback('Failed to connect to the network. Please try again later.', 'error');
+      }
     });
   }
   
