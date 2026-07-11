@@ -79,7 +79,7 @@ def send_message(req: func.HttpRequest) -> func.HttpResponse:
     forwarded_for = req.headers.get("X-Forwarded-For")
     client_ip = forwarded_for.split(',')[0].strip() if forwarded_for else "unknown_ip"
 
-    # Fix 3: Enforce identical rate limiting boundaries on contact submissions
+    # Enforce identical rate limiting boundaries on contact submissions
     if is_rate_limited(client_ip):
         logging.warning(f"Contact form entry blocked via rate limiter: {client_ip}")
         return func.HttpResponse("Too many messages submitted. Please wait before trying again.", status_code=429)
@@ -93,7 +93,7 @@ def send_message(req: func.HttpRequest) -> func.HttpResponse:
         if not name or not email or not message:
             return func.HttpResponse("Missing required fields.", status_code=400)
 
-        # Fix 2: Applied explicit environment guards before database connection strings are parsed
+        # Applied explicit environment guards before database connection strings are parsed
         endpoint = os.environ.get("COSMOS_ENDPOINT")
         key = os.environ.get("COSMOS_KEY")
         connection_string = os.environ.get("COMMUNICATION_SERVICES_CONNECTION_STRING")
@@ -121,15 +121,22 @@ def send_message(req: func.HttpRequest) -> func.HttpResponse:
         recipient_email = "sadevsabuddhika89@gmail.com" 
         email_client = EmailClient.from_connection_string(connection_string)
         
+        # FIX: Restructured the email object layout to match the correct SDK recipient schema
         email_message = {
             "senderAddress": sender_email,
-            "recipientAddress": recipient_email,
+            "recipients": {
+                "to": [{"address": recipient_email}]
+            },
             "content": {
                 "subject": f"💼 Portfolio Message from {name}",
-                "plainText": f"Name: {name}\nSender: {email}\n\nMessage:\n{message}"
+                "plainText": f"You received a new message via your portfolio site!\n\nName: {name}\nSender Email: {email}\n\nMessage:\n{message}"
             }
         }
-        email_client.begin_send(email_message)
+        
+        poller = email_client.begin_send(email_message)
+        poller.result() 
+        
+        logging.info("Notification email dispatched to Gmail successfully.")
         return func.HttpResponse("Ticket sent successfully!", status_code=201)
 
     except ValueError:
