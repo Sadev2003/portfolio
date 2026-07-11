@@ -118,7 +118,7 @@ def send_message(req: func.HttpRequest) -> func.HttpResponse:
         container.create_item(body=ticket_document)
 
         # Execute downstream SMTP transmission to Gmail
-        recipient_email = "YOUR_PERSONAL_GMAIL@gmail.com" 
+        recipient_email = "sadevsabuddhika89@gmail.com" 
         email_client = EmailClient.from_connection_string(connection_string)
         
         email_message = {
