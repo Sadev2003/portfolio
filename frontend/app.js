@@ -542,4 +542,19 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   document.querySelectorAll('.carousel-wrapper').forEach(setupCarousel);
+
+  // 9. Skills Expand/Collapse Toggle
+  const skillsGrid = document.getElementById('skills-grid-new');
+  const showAllBtn = document.getElementById('show-all-skills-btn');
+  if (skillsGrid && showAllBtn) {
+    const btnText = showAllBtn.querySelector('.btn-text');
+    showAllBtn.addEventListener('click', () => {
+      const isExpanded = skillsGrid.classList.toggle('expanded');
+      if (isExpanded) {
+        btnText.textContent = 'Show Less';
+      } else {
+        btnText.textContent = 'Show All';
+      }
+    });
+  }
 });
