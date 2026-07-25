@@ -27,6 +27,7 @@ graph TD
     subgraph Functions [Serverless Backend]
         func_counter[Azure Function: Visitor Counter GET]
         func_email[Azure Function: Send Message POST]
+        CosmosDB[(Azure Cosmos DB)]
     end
 
     subgraph CI_CD [Pipeline]
@@ -38,6 +39,7 @@ graph TD
     Browser <--> SWA
     Browser --> func_counter
     Browser --> func_email
+    func_counter --> CosmosDB
     
     GH --> GHA
     GHA -->|OIDC Authentication| SWA
@@ -55,7 +57,7 @@ graph TD
     *   **Scroll-Friendly Highlights**: Bound project layout border/text color shifts directly to a state-driven scroll collision detector using `document.elementFromPoint()`.
 
 ### 2. Serverless Backend APIs (Microsoft Azure Functions)
-*   **Visitor Counter (GET)**: Fetches and displays real-time visitor counts inside the navigation bar via a secure serverless Azure Function endpoint.
+*   **Visitor Counter (GET)**: Fetches and displays real-time visitor counts inside the navigation bar via a secure serverless Azure Function endpoint connected to **Azure Cosmos DB** for data storage.
 *   **Email Dispatcher (POST)**: Form submissions on the contact form (`set_name`, `set_email`, `cat << 'EOF' > message.txt`) are processed via a serverless Azure Function forwarding tickets directly to Sadev's mailbox.
 
 ### 3. CI/CD & Deployment (Azure Static Web Apps)
