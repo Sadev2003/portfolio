@@ -1,7 +1,0 @@
-{
-  "azureFunctions.deploySubpath": "api",
-  "azureFunctions.scmDoBuildDuringDeployment": false,
-  "azureFunctions.projectLanguage": "Python",
-  "azureFunctions.projectRuntime": "~4",
-  "azureFunctions.preDeployTask": "func: pack"
-}
