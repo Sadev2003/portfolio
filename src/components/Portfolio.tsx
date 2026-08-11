@@ -124,7 +124,6 @@ const skillGroups = [
     label: "Cloud & Infrastructure",
     items: [
       { name: "Microsoft Azure", featured: true },
-      { name: "Terraform (IaC)", featured: true },
       { name: "Docker Containers", featured: true },
       { name: "Azure Static Web Apps" },
       { name: "Azure Functions" },
@@ -137,7 +136,6 @@ const skillGroups = [
       { name: "GitHub Actions CI/CD", featured: true },
       { name: "Prometheus", featured: true },
       { name: "Grafana", featured: true },
-      { name: "Linux & Bash Scripting" },
       { name: "Git & GitHub" },
     ],
   },
