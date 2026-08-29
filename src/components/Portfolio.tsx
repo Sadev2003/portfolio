@@ -194,7 +194,7 @@ const projects = [
   {
     index: "03",
     tag: "Django · Docker · AI",
-    title: "Rebuild — Donation Coordination Platform",
+    title: "Parithyaga — Donation Coordination Platform",
     role: "Backend & Infrastructure Developer",
     stack: ["Next.js", "Django", "PostgreSQL", "Python", "Google Gemini AI", "Docker"],
     achievements: [
@@ -258,6 +258,7 @@ const certifications = [
   { name: "Microsoft Certified: Azure Fundamentals (AZ-900)", status: "In Progress" },
   { name: "Cisco Networking Academy — Linux Essentials", status: "Verified", link: "https://www.credly.com/users/sadev-bandara" },
   { name: "Cisco Networking Academy — IT Essentials", status: "Verified", link: "https://www.credly.com/users/sadev-bandara" },
+  { name: "Docker Training Course for the Absolute Beginner — KodeKloud", status: "Verified", link: "https://learn.kodekloud.com/learn/certificate/c9bc8991-d114-432e-b30f-cb1df99fec44" },
 ];
 
 function SectionHeading({ label, count }: { label: string; count?: string }) {
@@ -1119,16 +1120,8 @@ function CanvasBackground() {
     if (!ctx) return;
 
     let animationFrameId: number;
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
-
-    const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener("resize", handleResize);
+    let width = window.innerWidth;
+    let height = window.innerHeight;
 
     const devopsLogs = Object.keys(commandOutputs);
 
@@ -1148,7 +1141,18 @@ function CanvasBackground() {
         const commandText = `sadev@sys:~$ ${text}`;
         const outputLines = commandOutputs[text] || [];
 
-        const startY = this.direction === "up" ? height - 50 : 50;
+        let startY = this.direction === "up" ? height - 50 : 50;
+
+        if (this.lines.length > 0) {
+          if (this.direction === "up") {
+            const maxY = Math.max(...this.lines.map((l) => l.y));
+            startY = Math.max(height - 50, maxY + 20);
+          } else {
+            const minY = Math.min(...this.lines.map((l) => l.y));
+            const blockHeight = (outputLines.length + 1) * 15;
+            startY = Math.min(50, minY - blockHeight - 20);
+          }
+        }
 
         // Push command
         this.lines.push({
@@ -1205,37 +1209,100 @@ function CanvasBackground() {
     }
 
     const streams: LogStream[] = [];
-    if (width > 1024) {
-      streams.push(new LogStream(30, "up")); // Left margin: scroll UP
-      streams.push(new LogStream(width - 350, "down")); // Right margin: scroll DOWN
-    } else if (width > 768) {
-      streams.push(new LogStream(20, "up")); // Tablet: Left margin only scroll UP
-    }
 
-    // Populate initial lines at random heights
-    streams.forEach((stream) => {
+    const resizeCanvas = () => {
+      if (!canvas) return;
+      const dpr = window.devicePixelRatio || 1;
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      ctx.resetTransform();
+      ctx.scale(dpr, dpr);
+    };
+
+    const populateInitialLines = (stream: LogStream) => {
+      stream.lines = [];
+      let currentY = stream.direction === "up" ? height - 50 : 50;
       for (let j = 0; j < 6; j++) {
         const text = devopsLogs[Math.floor(Math.random() * devopsLogs.length)];
-        const startY = Math.random() * (height - 200) + 100;
         const outputLines = commandOutputs[text] || [];
+        const blockHeight = (outputLines.length + 1) * 15;
 
-        stream.lines.push({
-          text: `sadev@sys:~$ ${text}`,
-          y: startY,
-          opacity: 0.18,
-          isCommand: true
-        });
+        let startY = currentY;
+        if (stream.direction === "up") {
+          startY = currentY - blockHeight - (Math.random() * 80 + 40);
+          currentY = startY;
+        } else {
+          startY = currentY + (Math.random() * 80 + 40);
+          currentY = startY + blockHeight;
+        }
 
-        outputLines.forEach((outText, idx) => {
+        if (startY > -200 && startY < height + 200) {
           stream.lines.push({
-            text: outText,
-            y: startY + (idx + 1) * 15,
-            opacity: 0.10,
-            isCommand: false
+            text: `sadev@sys:~$ ${text}`,
+            y: startY,
+            opacity: 0.18,
+            isCommand: true
           });
-        });
+          outputLines.forEach((outText, idx) => {
+            stream.lines.push({
+              text: outText,
+              y: startY + (idx + 1) * 15,
+              opacity: 0.10,
+              isCommand: false
+            });
+          });
+        }
       }
-    });
+    };
+
+    const updateStreamPositions = () => {
+      if (width > 1024) {
+        if (streams.length === 0) {
+          const s1 = new LogStream(30, "up");
+          const s2 = new LogStream(width - 350, "down");
+          populateInitialLines(s1);
+          populateInitialLines(s2);
+          streams.push(s1, s2);
+        } else if (streams.length === 1) {
+          streams[0].x = 30;
+          streams[0].direction = "up";
+          const s2 = new LogStream(width - 350, "down");
+          populateInitialLines(s2);
+          streams.push(s2);
+        } else {
+          streams[0].x = 30;
+          streams[1].x = width - 350;
+        }
+      } else if (width > 768) {
+        if (streams.length === 0) {
+          const s1 = new LogStream(20, "up");
+          populateInitialLines(s1);
+          streams.push(s1);
+        } else {
+          streams[0].x = 20;
+          streams[0].direction = "up";
+          if (streams.length > 1) {
+            streams.splice(1, 1);
+          }
+        }
+      } else {
+        streams.length = 0;
+      }
+    };
+
+    resizeCanvas();
+    updateStreamPositions();
+
+    const handleResize = () => {
+      resizeCanvas();
+      updateStreamPositions();
+    };
+
+    window.addEventListener("resize", handleResize);
 
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
