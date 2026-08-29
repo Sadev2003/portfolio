@@ -182,12 +182,13 @@ const projects = [
     tag: "Azure · Serverless",
     title: "Serverless Portfolio Platform & Integration Engine",
     role: "Cloud & Backend Developer",
-    stack: ["Azure Static Web Apps", "Azure Functions (Python)", "Cosmos DB", "Communication Services", "Python", "Git"],
+    stack: ["Azure Static Web Apps", "Azure Functions (Python)", "Cosmos DB", "GitHub Actions", "Communication Services", "Python", "Git"],
     achievements: [
       "Engineered a two-tier serverless portfolio platform with Azure SWA for static asset delivery and Python Azure Functions for microservices APIs.",
       "Designed an active visitor counter that reads/writes transactional metrics to a NoSQL Azure Cosmos DB database.",
       "Implemented a custom proxy-header rate limiter (sliding window) to secure API endpoints against flooding.",
-      "Built automated contact message dispatching through Azure Communication Services integrating SMTP relay."
+      "Built automated contact message dispatching through Azure Communication Services integrating SMTP relay.",
+      "Created a GitHub Actions CI/CD workflow to automate build validation and deployment to Azure Static Web Apps on code push."
     ],
     github: "https://github.com/Sadev2003/portfolio"
   },
