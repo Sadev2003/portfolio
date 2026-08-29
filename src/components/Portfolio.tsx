@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform, type Variants } from "motion/react";
 import { useRef, useState, useEffect, type FormEvent } from "react";
 import { z } from "zod";
 import Lenis from "lenis";
-import resumeAsset from "@/assests/SADEV SABUDDHIKA CV.pdf";
+import resumeAsset from "@/assests/Sadev_Sabuddhika_Cloud_Engineering_Intern_CV.pdf";
 import profileImage from "@/assests/profile.jpg";
 import { createPortal } from "react-dom";
 
@@ -370,7 +370,7 @@ function Hero() {
             </a>
             <a
               href={resumeAsset}
-              download="Sadev_Sabuddhika_CV.pdf"
+              download="Sadev_Sabuddhika_Cloud_Engineering_Intern_CV.pdf"
               className="px-4 py-2.5 border border-border hover:border-accent/50 hover:text-accent transition-colors rounded-none flex items-center gap-2 cursor-pointer bg-background"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
