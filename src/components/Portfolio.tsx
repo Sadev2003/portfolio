@@ -931,9 +931,9 @@ function Contact() {
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-accent block mb-3">
               GET IN TOUCH
             </span>
-            <h2 className="text-5xl md:text-6xl font-extrabold tracking-tighter text-white mb-6 flex flex-wrap items-baseline gap-x-3">
+            <h2 className="text-5xl md:text-6xl font-extrabold tracking-tighter text-white mb-8 flex flex-wrap items-baseline gap-x-4">
               <span>Let's talk</span>
-              <span className="text-accent text-6xl md:text-7xl font-black">cloud.</span>
+              <span className="text-accent text-7xl md:text-9xl lg:text-[10rem] font-black leading-[0.8]">cloud.</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed text-pretty max-w-[45ch]">
               I enjoy combining infrastructure, code, and networking to deploy stable, high-performance cloud applications. Open to Cloud, DevOps, and Cloud Administrator internships (remote or on-site). Based in Homagama, Sri Lanka.
